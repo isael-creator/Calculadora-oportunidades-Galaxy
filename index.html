@@ -891,7 +891,7 @@
                     <span class="progresso">4 / 4</span>
                 </div>
                 <div class="card-titulo">Serviço de Manutenção</div>
-                <div class="card-subtitulo">Usinas que precisam de atenção técnica</div>
+                <div class="card-subtitulo">Manutenção preventiva e corretiva da carteira</div>
             </div>
             <div class="card-corpo">
                 <div class="receita-label">Receita anual com serviços de manutenção</div>
@@ -904,11 +904,11 @@
                     <span class="linha-valor" id="c-usinas-4">0</span>
                 </div>
                 <div class="linha-calc">
-                    <span class="linha-label">Percentual com problema identificado/mês</span>
-                    <span class="linha-valor">10%</span>
+                    <span class="linha-label">Percentual com necessidade de inspeção/mês</span>
+                    <span class="linha-valor">4%</span>
                 </div>
                 <div class="linha-calc">
-                    <span class="linha-label">Usinas com ocorrência por mês</span>
+                    <span class="linha-label">Usinas com necessidade de inspeção por mês</span>
                     <span class="linha-valor destaque" id="c-problemas">0 usinas/mês</span>
                 </div>
                 <div class="linha-calc">
@@ -923,8 +923,8 @@
                 <div class="meta-mensal">
                     <div class="meta-header">Por mês</div>
                     <div class="meta-row">
-                        <span class="meta-label">Serviços de manutenção a executar</span>
-                        <span class="meta-val" id="m-manut-und">0 serviços/mês</span>
+                        <span class="meta-label">Inspeções a realizar por mês</span>
+                        <span class="meta-val" id="m-manut-und">0 inspeções/mês</span>
                     </div>
                     <div class="meta-row">
                         <span class="meta-label">Receita mensal estimada</span>
@@ -933,7 +933,7 @@
                 </div>
 
                 <div class="caixa-explicacao">
-                    <p>Quem acompanha, identifica problemas antes do cliente reclamar. Cada manutenção resolvida gera receita imediata e fortalece o relacionamento de longo prazo.</p>
+                    <p>4% da sua base apresenta necessidade de inspeção por mês. Cada visita é uma oportunidade de vender manutenção preventiva ou corretiva, gerando receita imediata e fortalecendo o relacionamento de longo prazo.</p>
                 </div>
             </div>
             <div class="cta-instagram">
@@ -1005,8 +1005,8 @@
             const vendas    = Math.round(leads * 0.30);
             const recIndic  = vendas * 20000 * 12;
 
-            /* MANUTENCAO — base: total usinas, 10% */
-            const problemas = Math.round(usinas * 0.10);
+            /* MANUTENCAO — base: total usinas, 4% */
+            const problemas = Math.round(usinas * 0.04);
             const recManut  = problemas * 500 * 12;
 
             const total = recAcomp + recAmpl + recIndic + recManut;
@@ -1050,7 +1050,7 @@
             document.getElementById('v-manut').textContent       = fmt(recManut);
             document.getElementById('c-usinas-4').textContent    = usinas.toLocaleString('pt-BR');
             document.getElementById('c-problemas').textContent   = problemas.toLocaleString('pt-BR') + ' usinas/mês';
-            document.getElementById('m-manut-und').textContent   = problemas.toLocaleString('pt-BR') + ' serviços/mês';
+            document.getElementById('m-manut-und').textContent   = problemas.toLocaleString('pt-BR') + ' inspeções/mês';
             document.getElementById('m-manut-mes').textContent   = fmt(Math.round(recManut / 12));
 
             /* Transição */
